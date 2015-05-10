@@ -135,7 +135,7 @@ private static int currsize=0;
 				//System.out.println(arr[(i-1)/2]+" "+arr[i]);
 				swap((i-1)/2,i);
 				i=(i-1)/2;
-				//System.out.println("swapped");
+				System.out.println("swapped");
 			}
 		}
 		{

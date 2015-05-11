@@ -132,7 +132,7 @@ private static int currsize=0;
 			int i=currsize-1;
 			while(i>0&&arr[(i-1)/2]>arr[i])
 			{
-				//System.out.println(arr[(i-1)/2]+" "+arr[i]);
+				
 				swap((i-1)/2,i);
 				i=(i-1)/2;
 				System.out.println("swapped");
@@ -145,7 +145,7 @@ private static int currsize=0;
 	}
 
 	private static void swap(int i, int j) {
-		// TODO Auto-generated method stub
+		
 		//System.out.println(arr[i]+" "+arr[j]);
 		int temp;
 		temp=arr[i];

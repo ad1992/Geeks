@@ -1,8 +1,10 @@
 package DataStructures;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 
 /**
  * @author Aakansha Doshi
@@ -10,10 +12,12 @@ import java.io.InputStreamReader;
  */
 public class CircularLinkList {
 static Node start;
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 		
-		CircularLinkList ob=new CircularLinkList();
+		CircularLinkList ob=new CircularLinkList();	
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			System.out.print("\nEnter 1 for insertion\nEnter 2 for display\n");

@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 /**
  * @author Aakansha Doshi
  *
+ *I have added insert at end and delete at any position
  */
 public class CircularLinkList {
 static Node start;	
@@ -13,7 +14,7 @@ static Node start;
 		CircularLinkList ob=new CircularLinkList();			
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
-			System.out.print("\nEnter 1 for insertion at begining\nEnter 2 for display\nEnter 3 to delete");
+			System.out.print("\nEnter 1 for insertion at begining\nEnter 2 for display\nEnter 3 to delete at any position\nEnter 4 to insert at end");
 			int choice=Integer.parseInt(br.readLine().trim());
 			switch(choice)
 			{
@@ -28,9 +29,14 @@ static Node start;
 			case 3:
 				System.out.println("Enter the position to be deleted");
 				int pos=Integer.parseInt(br.readLine());
-				num=ob.delete(pos);
-				System.out.println("The deleted node is "+num);
-				break;			
+				if(!ob.delete(pos))
+				System.out.println("Nothing to delete");
+				break;
+			case 4:
+				System.out.println("Enter the number to be inserted at end ");
+				num=Integer.parseInt(br.readLine().trim());				
+				ob.insertend(num);
+				break;
 			default:
 				System.exit(0);;
 				
@@ -38,6 +44,25 @@ static Node start;
 			
 		}
 
+	}
+	private void insertend(int num) {
+		Node p=new Node();
+		p.data=num;
+		Node temp=start;
+		if(start==null)
+		{
+			start=p;
+			p.link=p;
+		}
+		else
+		{
+			while(temp.link!=start)
+			{
+				temp=temp.link;
+			}
+			temp.link=p;
+			p.link=start;
+		}
 	}
 	private int count()
 	{
@@ -53,30 +78,40 @@ static Node start;
 		}
 		return c;
 	}
-	private int  delete(int pos) {
+	private boolean  delete(int pos) {
 	//Considering the first node inseretd as the starting position		
 		Node p=start;int del;
 		int i=2;
-		if(pos==1)		
+		int c=count();
+		if(c>0)
 		{
-			pos=count()+1;
-			System.out.println("pos= "+pos);
-			start=p.link;
-			if(pos==2)
-				start=null;
+			if(pos==1)		
+			{
+				pos=c+1;
+				System.out.println("pos= "+pos);
+				start=p.link;
+				if(pos==2)
+					start=null;
+			}
+			while(i<pos)
+			{
+				p=p.link;
+				i++;
+			}
+			del=p.link.data;
+			p.link=p.link.link;
+			if(pos==count()+1)
+			{
+				start=p;
+			}
+			System.out.println("The deleted node is "+del);
+			return true;
 		}
-		while(i<pos)
+		else
 		{
-			p=p.link;
-			i++;
+			
+			return false;
 		}
-		del=p.link.data;
-		p.link=p.link.link;
-		if(pos==count()+1)
-		{
-			start=p;
-		}
-		return del;
 		
 		
 	}

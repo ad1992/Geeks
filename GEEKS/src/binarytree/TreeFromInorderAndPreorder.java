@@ -1,4 +1,4 @@
-package DataStructures;
+package binarytree;
 
 import java.io.BufferedReader;
 import java.io.IOException;

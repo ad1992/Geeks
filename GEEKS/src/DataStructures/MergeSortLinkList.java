@@ -30,6 +30,7 @@ public class MergeSortLinkList {
 			start.insert(num,start);
 			}
 		}
+		System.out.println("The original linklist--->");
 		start.display();
 		Node star=ob.mergeSort(start);
 		System.out.println("final sorted linklist--->");
@@ -48,10 +49,11 @@ public class MergeSortLinkList {
 		mid.link=null;
 		Node left=mergeSort(l);	
 		Node right=mergeSort(r);	
-		if(left!=null)
-		left.display();
-		if(right!=null)
-		right.display();
+		//uncomment to view the left and right divisions of linklist
+		//if(left!=null)
+		//left.display();
+		//if(right!=null)
+		//right.display();
 		Node merge=sortmerge(left,right);			
 		return merge;
 		
@@ -189,8 +191,8 @@ public class MergeSortLinkList {
 
 	
 	 
-	
-}
+}	
+
 class Node
 {
 	int data;

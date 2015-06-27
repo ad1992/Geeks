@@ -15,7 +15,7 @@ public class Bfs {
 		    g.addEdge(2, 0);
 		    g.addEdge(2, 3);
 		    g.addEdge(3, 3);
-		    g.getBFS(0);
+		    g.getBFS(2);
 		 
 	}
 

@@ -7,8 +7,7 @@ import java.util.*;
  * 
  *         Given a positive integer N, count all possible distinct binary
  *         strings of length N such that there are no consecutive 1’s.
- *         This code has been modified to print the strings also.
- *         
+ *         This code has been modified to print the strings also. *         
  *         This is the modified version of my code in Ideone http://ideone.com/Gw2H8e         
  * 
  * 

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * @author aakansha
+ * @author Aakansha Doshi
  * 
  *         LCS Problem Statement: Given two sequences, find the length of
  *         longest subsequence present in both of them. A subsequence is a
@@ -49,9 +49,7 @@ public class LCS {
 				}
 			}
 		}
-		System.out.println(lcs[s1.length()][s2.length()]);
-		///Now printing the lcs
-		int len=lcs[s1.length()][s2.length()]+1;
+		System.out.println(lcs[s1.length()][s2.length()]);		
 		String commonlcs="";
 		int i=s1.length(),j=s2.length();
 		while(i>0&&j>0)

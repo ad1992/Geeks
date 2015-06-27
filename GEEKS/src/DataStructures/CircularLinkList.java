@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 /**
  * @author Aakansha Doshi
  *
- *I have added insert at end and delete at any position
+ *
  */
 public class CircularLinkList {
 static Node start;	
@@ -14,7 +14,7 @@ static Node start;
 		CircularLinkList ob=new CircularLinkList();			
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
-			System.out.print("\nEnter 1 for insertion at begining\nEnter 2 for display\nEnter 3 to delete at any position\nEnter 4 to insert at end");
+			System.out.print("\nEnter 1 for insertion at begining\nEnter 2 for display\nEnter 3 to delete at any position\nEnter 4 to insert at end\nEnter 5 to stop");
 			int choice=Integer.parseInt(br.readLine().trim());
 			switch(choice)
 			{
@@ -37,8 +37,10 @@ static Node start;
 				num=Integer.parseInt(br.readLine().trim());				
 				ob.insertend(num);
 				break;
+			case 5:
+				System.exit(0);
 			default:
-				System.exit(0);;
+				System.out.print("\nEnter a valid key\n");
 				
 			}
 			
@@ -79,31 +81,37 @@ static Node start;
 		return c;
 	}
 	private boolean  delete(int pos) {
-	//Considering the first node inseretd as the starting position		
+	//Considering the first node inserted as the starting position		
 		Node p=start;int del;
 		int i=2;
 		int c=count();
+		if(pos>c)
+		{
+			System.out.println("Invalid index");
+			return false;
+		}
 		if(c>0)
 		{
 			if(pos==1)		
 			{
 				pos=c+1;
-				System.out.println("pos= "+pos);
-				start=p.link;
+				//System.out.println("pos= "+pos);
+				start=p.link;//To start counting the nodes from 2nd node when first is deleted
+				//System.out.println("p="+p.data);
 				if(pos==2)
 					start=null;
 			}
 			while(i<pos)
 			{
 				p=p.link;
+				//System.out.println("p="+p.data+" "+pos);
 				i++;
 			}
+		
 			del=p.link.data;
 			p.link=p.link.link;
-			if(pos==count()+1)
-			{
-				start=p;
-			}
+			//System.out.println("end");
+			
 			System.out.println("The deleted node is "+del);
 			return true;
 		}

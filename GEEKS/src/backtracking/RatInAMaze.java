@@ -25,7 +25,7 @@ public class RatInAMaze {
 		System.out.println("Enter the values of maze.Enter \"1\" if block can be used and \"0\" if it a dead end");
 		for(int i=0;i<N;i++)
 		{
-			System.out.println("enter the first row values");
+			System.out.println("enter the  row "+(i+1)+" values");
 			if((s=br.readLine().trim())!=null)
 			{
 				st=new StringTokenizer(s);

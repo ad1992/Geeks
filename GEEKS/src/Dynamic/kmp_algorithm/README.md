@@ -52,5 +52,3 @@ For the pattern “AAAAA”, lps[] is [0, 1, 2, 3, 4]
 For the pattern “AAABAAA”, lps[] is [0, 1, 2, 0, 1, 2, 3]  
 For the pattern “AAACAAAAAC”, lps[] is [0, 1, 2, 0, 1, 2, 3, 3, 3, 4]  
 
-Searching Algorithm:
-Unlike the Naive algo where we slide the pattern by one, we use a value from lps[] to decide the next sliding position. Let us see how we do that. When we compare pat[j] with txt[i] and see a mismatch, we know that characters pat[0..j-1] match with txt[i-j+1…i-1], and we also know that lps[j-1] characters of pat[0…j-1] are both proper prefix and suffix which means we do not need to match these lps[j-1] characters with txt[i-j…i-1] because we know that these characters will anyway match

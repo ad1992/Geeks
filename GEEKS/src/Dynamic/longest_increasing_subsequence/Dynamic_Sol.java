@@ -1,19 +1,26 @@
-package Dynamic;
+package Dynamic.longest_increasing_subsequence ;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-public class LIS {
+/**
+ * @author Aakansha Doshi
+ *
+ */
+public class Dynamic_Sol {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		// TODO Auto-generated method stub
+	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N=Integer.parseInt(br.readLine());
+		String s=br.readLine().trim();
+		StringTokenizer st=new StringTokenizer(s,", ");
 		int arr[]=new int[N];
 		for(int i=0;i<N;i++)
 		{
-			arr[i]=Integer.parseInt(br.readLine());
+			arr[i]=Integer.parseInt(st.nextToken());
 		}
 		int ans=increasingSequence(arr);
 		System.out.println(ans);
@@ -36,10 +43,10 @@ public class LIS {
 			}
 		
 		}
-		for(int i=1;i<a.length;i++)
+		/*for(int i=1;i<a.length;i++)
 		{
 			System.out.println(lis[i]);
-		}
+		}*/
 		int max=Integer.MIN_VALUE;
 		for(int i=0;i<a.length;i++)
 		{

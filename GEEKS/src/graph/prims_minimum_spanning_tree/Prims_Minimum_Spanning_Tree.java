@@ -47,14 +47,14 @@ public class Prims_Minimum_Spanning_Tree {
 
 	}
 	private static void primMST(LinkedList<Node>[] adj, int N) {
-		Node parent[]=new Node[N];
+		int parent[]=new int[N];
 		int key[]=new int[N];
 		boolean visited[]=new boolean[N];
 		for(int i=0;i<N;i++)
 		{
 			key[i]=Integer.MAX_VALUE;
 		}
-		parent[0]=new Node(-1,0);
+		parent[0]=-1;
 		key[0]=0;
 		for(int i=0;i<N;i++)
 		{
@@ -71,24 +71,25 @@ public class Prims_Minimum_Spanning_Tree {
 					if(!visited[v]&&key[v]>w)
 					{
 						key[v]=w;
-						parent[v]=new Node(u,w);
+						parent[v]=u;
 					}
 				}
 			}
 		}
-		printMST(parent,adj);
+		
+		printMST(parent,key);
 		
 	}
-	private static void printMST(Node[] parent, LinkedList<Node>[] adj) {
+	private static void printMST(int[] parent, int[] key) {
 		System.out.println("Following are the edges in the constructed Prim MST");
 		System.out.println("Edge1\t\tEdge2\t\tWeight");
 		int s=0;
 		for(int i=1;i<parent.length;i++)
 		{
-			int weight=parent[i].W;	
 			
+			int weight=key[i];			
 			s+=weight;
-			System.out.println(parent[i].N+"\t\t"+i+"\t\t"+weight);
+			System.out.println(parent[i]+"\t\t"+i+"\t\t"+weight);
 		}
 		System.out.println("The weight of MST is "+s);
 	}

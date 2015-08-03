@@ -1,11 +1,11 @@
 #Greedy Algorithms | Set 2 (Kruskal’s Minimum Spanning Tree Algorithm)#
 
-###Input###
+###Input Format###
 
 First Line will contain N-The number of vertices and M-The number of edges.  
 The next M lines will contain v1,v2,w where v1,v2 represent an edge and w represents weight between edges.  
 
-###Output###
+###Output Format###
 The tables consisting of edges in MST and the total weight of spanning tree.
 
 ###Sample Input #1###

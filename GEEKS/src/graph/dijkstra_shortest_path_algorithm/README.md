@@ -2,12 +2,12 @@
 
 Given a graph and a source vertex in graph, find shortest paths from source to all vertices in the given graph.
 
-###Input###
+###Input Format###
 
 First Line will contain N-The number of vertices and M-The number of edges.  
 The next M lines will contain v1,v2,w where v1,v2 represent an edge and w represents weight between them.  
 
-###Output###
+###Output Format###
 
 The table containing distance to all vertices from source
 

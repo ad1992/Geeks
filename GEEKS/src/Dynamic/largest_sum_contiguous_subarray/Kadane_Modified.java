@@ -29,9 +29,9 @@ public class Kadane_Modified {
 	}
 
 	private static int maxSubArraySum(int[] arr) {
-		int max_so_far = arr[0], max_ending_here =arr[0];
+		int max_so_far = arr[0], max_ending_here =0;
 		int i;
-		for(i = 1; i < arr.length; i++)
+		for(i = 0; i < arr.length; i++)
 		{
 			max_ending_here = max_ending_here + arr[i];
 			if (max_so_far < max_ending_here)

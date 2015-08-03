@@ -19,6 +19,7 @@ The Shortest distance matrix.
 2 3 1
 ```
 which represents the following graph
+```
              10
        (0)------->(3)
         |         /|\
@@ -26,7 +27,9 @@ which represents the following graph
         |          | 1
        \|/         |
        (1)------->(2)
-            3       
+              3       
+              
+```
 Note that the value of graph[i][j] is 0 if i is equal to j 
 And graph[i][j] is INF (infinite) if there is no edge from vertex i to j.
 

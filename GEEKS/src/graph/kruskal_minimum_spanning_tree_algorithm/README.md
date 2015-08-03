@@ -29,7 +29,7 @@ The tables consisting of edges in MST and the total weight of spanning tree.
 ###Sample Output#2###
 ```
 Following are the edges in the constructed Krushkal MST
-Edge1		Edge2		Weight
+Edge1	Edge2	Weight
 7		6		1
 2		8		2
 6		5		2
@@ -52,7 +52,7 @@ The weight of MST is 37
 ###Sample Output#2###
 ```
 Following are the edges in the constructed Krushkal MST
-Edge1		Edge2		Weight
+Edge1	Edge2	Weight
 2		3		4
 0		3		5
 0		1		10
